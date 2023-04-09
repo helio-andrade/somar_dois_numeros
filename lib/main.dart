@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       home: CalculadoraPage(
         calculadora: Calculadora(),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
