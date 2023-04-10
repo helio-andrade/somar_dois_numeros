@@ -18,8 +18,29 @@ class _CalculadoraPageState extends State<CalculadoraPage> {
   int resultado = 0;
 
   void calcularResultado() {
-    int num1 = int.tryParse(numero1Controller.text) ?? 0;
-    int num2 = int.tryParse(numero2Controller.text) ?? 0;
+    int? num1 = int.tryParse(numero1Controller.text);
+    int? num2 = int.tryParse(numero2Controller.text);
+
+    if (num1 == null || num2 == null) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Erro'),
+            content: Text('Por favor, digite dois números inteiros.'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+      return;
+    }
 
     setState(() {
       resultado = Calculadora().calcular(num1, num2);
