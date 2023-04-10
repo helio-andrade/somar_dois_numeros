@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'calculadora.dart';
 import 'package:somar_dois_numeros/calculadora_page.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

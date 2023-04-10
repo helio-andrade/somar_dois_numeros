@@ -26,14 +26,14 @@ class _CalculadoraPageState extends State<CalculadoraPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('Erro'),
-            content: Text('Por favor, digite dois números inteiros.'),
+            title: const Text('Erro'),
+            content: const Text('Por favor, digite dois números inteiros.'),
             actions: <Widget>[
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text('OK'),
+                child: const Text('OK'),
               ),
             ],
           );
@@ -99,10 +99,10 @@ class _CalculadoraPageState extends State<CalculadoraPage> {
                   controller: numero1Controller,
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Digite um número',
                     filled: true,
-                    fillColor: const Color(0xFFFFF7D1),
+                    fillColor: Color(0xFFFFF7D1),
                   ),
                   focusNode: num1Focus,
                   onSubmitted: (_) => calcularResultado(),
@@ -115,10 +115,10 @@ class _CalculadoraPageState extends State<CalculadoraPage> {
                   controller: numero2Controller,
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Digite outro número',
                     filled: true,
-                    fillColor: const Color(0xFFFFF7D1),
+                    fillColor: Color(0xFFFFF7D1),
                   ),
                   onSubmitted: (_) => calcularResultado(),
                 ),
